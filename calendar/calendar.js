@@ -22,10 +22,6 @@ function todaysdate() {
 }
 todaysdate()
 
-
-
-
-
 let currentDate = new Date();
 
 function renderCalendar() {
