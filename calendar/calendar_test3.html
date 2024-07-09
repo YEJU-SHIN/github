@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALENDAR📆</title>
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+    <h1>오늘</h1>
+    
+    <div class= 'TODAY'>
+        <div id="today_year"></div>
+        <div>&nbsp;</div>
+        <div id="today_month"></div>
+        <div>&nbsp;</div>
+        <div id="today_date"></div>
+        <div>&nbsp;</div>
+        <div id="today_of_week"></div>
+        <div>요일</div>
+
+    </div><br>
+    
+    <div class="calendar-controls">
+        <button id="prev-month">이전</button>
+        <span id="current-month"></span>
+        <button id="next-month">다음</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body">
+            <!-- 달력 날짜 -->
+        </tbody>
+    </table>
+
+    <div class="container">
+        <div class="input-container">
+            <h2>할 일 목록</h2>
+            <input id="input" placeholder="예)보고서 작성" />
+            <button id="add-button">추가</button>
+        </div>
+        <div class="list-container">
+            <ul id="list">
+                <li class="list-item">보고서 작성하기</li>
+            </ul>
+        </div>
+    </div>    
+
+<script src="calendar.js"></script>
+
+  
+</body>
+</html>
