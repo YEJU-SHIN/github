@@ -8,12 +8,12 @@ const now = new Date();
 
 function todaysdate() {
     const today = {
-        today_year: now.getFullYear(),
-        today_date: now.getDate(),
-        today_year: now.toLocaleDateString('ko-KO', {year: 'numeric'}),
-        today_month: now.toLocaleDateString('ko-KO', {month: 'short'}),
-        today_date: now.toLocaleDateString('ko-KO', {day: 'numeric'}),
-        today_of_week: now.toLocaleDateString('ko-KO', {weekday: 'short'})
+        todayyear: now.getFullYear(),
+        todaydate: now.getDate(),
+        todayyear: now.toLocaleDateString('ko-KO', {year: 'numeric'}),
+        todaymonth: now.toLocaleDateString('ko-KO', {month: 'short'}),
+        todaydate: now.toLocaleDateString('ko-KO', {day: 'numeric'}),
+        todayofweek: now.toLocaleDateString('ko-KO', {weekday: 'short'})
     }
 
     for (let key in today) {
@@ -33,7 +33,6 @@ function renderCalendar() {
 
     // 월과 연도 표시
     const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
-    
     currentMonthElement.textContent = `${currentDate.getFullYear()}년 ${monthNames[currentDate.getMonth()]} `;
 
     // 달력 초기화
@@ -41,7 +40,7 @@ function renderCalendar() {
 
     // 날짜 추가
     let date = 1;
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 5; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < 7; j++) {
             const cell = document.createElement('td');
@@ -55,8 +54,11 @@ function renderCalendar() {
             }
             row.appendChild(cell);
         }
+
         calendarBody.appendChild(row);
     }
+
+            
 }
 
 prevMonthButton.addEventListener('click', () => {
