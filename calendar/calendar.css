@@ -23,21 +23,23 @@ th {
 
    gap: 2rem;
 }
-.input-container {
-    div{ float: left;}
-    gap: 2rem;
-}
-.container {
+.todobox {
     background-color: #fff8df;
     display: flex;
     flex-direction: column;
     padding: 32px 0;
 }
-.input-container { 
+.input-box div{ float: left;}
+.input-box { 
     width: 80%;
     display: flex;
     align-self: center;
     justify-content: space-between;
+    gap: 2rem;
+}
+#input:focus {
+    border-color: #8fc0ee;
+    outline: none;
 }
 #input {
   width: 70%;
@@ -56,7 +58,10 @@ th {
     border: 5px solid #aea48d;
     color: white;
 }
-.list-container {
+#add-button:hover {
+    background-color: #8fc0ee;
+}
+.list-box {
     display: flex;
     flex-direction: column;
     margin-top: 48px;
@@ -82,5 +87,6 @@ h2 {
     padding: 16px 0;
     font-size: 15px;
 }
+
 
 

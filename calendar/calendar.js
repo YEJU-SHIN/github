@@ -72,3 +72,22 @@ nextMonthButton.addEventListener('click', () => {
 });
 
 renderCalendar();
+
+const addButton = document.querySelector('#add-button');
+addButton.addEventListener('click', () => {
+    const userinput = document.querySelector('#input');
+    const text = userinput.value.trim();
+    
+    if(text !== '') {
+       addlist(text);
+       input.value = '';
+       input.focus();
+    } 
+});
+function addlist(text) {
+    const todolist = document.querySelector('#list');
+    const newlistitem = document.createElement('li');
+    newlistitem.classList.add('list-item');
+    newlistitem.innerHTML = text;
+    todolist.appendChild(newlistitem);
+}
