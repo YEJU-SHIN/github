@@ -1,6 +1,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
+    font-family: 'GowunBatang-Regular';
 }
 th, td {
     border: 1px solid ; color: #aea48d;
@@ -13,14 +14,27 @@ th {
 .calendar-controls {
     text-align: center;
     margin-bottom: 10px;
+    font-family: 'YClover-Bold';
 }
-.calendar-controls button {
+.calendar-controls button.bntPush {
     padding: 5px 10px;
+    font-family: 'YClover-Bold';
+    background-color: #8fc0ee;
+    color: #feffe9;
+    border-color:#aea48d;
+    box-shadow: chartreuse
+}
+.btnPush:hover {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+.calendar-controls button.btnPush:hover {
+    box-shadow: chartreuse
 }
  
 .today div{ float: left;}
 .today {
-
+   font-family: 'YClover-Bold';
    gap: 2rem;
 }
 .todobox {
@@ -86,7 +100,25 @@ h2 {
     margin-right: 32px;
     padding: 16px 0;
     font-size: 15px;
+    font-family: 'YClover-Bold';
+    color:rgb(40, 149, 85);
 }
 
+@font-face {
+    font-family: 'YClover-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/YClover-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
+.korean {
+    font-family: 'YClover-Bold';
+    color: rgb(40, 149, 85);
+}
