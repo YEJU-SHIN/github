@@ -40,8 +40,10 @@ function renderCalendar() {
 
     // 날짜 추가
     let date = 1;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
         const row = document.createElement('tr');
+        let rowisempty = true;
+        
         for (let j = 0; j < 7; j++) {
             const cell = document.createElement('td');
             if (i === 0 && j < firstDayIndex) {
@@ -51,15 +53,20 @@ function renderCalendar() {
             } else {
                 cell.textContent = date;
                 date++;
+                rowisempty = false;
             }
             row.appendChild(cell);
         }
-
+        if (rowisempty) {
+            break;
+        }  
         calendarBody.appendChild(row);
+        
+        
     }
 
             
-}
+} renderCalendar();
 
 prevMonthButton.addEventListener('click', () => {
     currentDate.setMonth(currentDate.getMonth() - 1);
@@ -71,7 +78,7 @@ nextMonthButton.addEventListener('click', () => {
     renderCalendar();
 });
 
-renderCalendar();
+
 
 const addButton = document.querySelector('#add-button');
 addButton.addEventListener('click', () => {
