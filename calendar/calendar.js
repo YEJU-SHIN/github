@@ -1,29 +1,34 @@
+// HTML 요소들을 변수에 저장
 const currentMonthElement = document.getElementById('current-month');
 const calendarBody = document.getElementById('calendar-body');
 const prevMonthButton = document.getElementById('prev-month');
 const nextMonthButton = document.getElementById('next-month');
 
-
+// 현재 날짜 객체 생성
 const now = new Date();
 
+// 오늘 날짜를 표시하는 함수
 function todaysdate() {
     const today = {
         todayyear: now.getFullYear(),
         todaydate: now.getDate(),
-        todayyear: now.toLocaleDateString('ko-KO', {year: 'numeric'}),
-        todaymonth: now.toLocaleDateString('ko-KO', {month: 'short'}),
-        todaydate: now.toLocaleDateString('ko-KO', {day: 'numeric'}),
-        todayofweek: now.toLocaleDateString('ko-KO', {weekday: 'short'})
-    }
+        todayyear: now.toLocaleDateString('ko-KO', { year: 'numeric' }),
+        todaymonth: now.toLocaleDateString('ko-KO', { month: 'short' }),
+        todaydate: now.toLocaleDateString('ko-KO', { day: 'numeric' }),
+        todayofweek: now.toLocaleDateString('ko-KO', { weekday: 'short' })
+    };
 
+    // today 객체의 값을 HTML 요소에 적용
     for (let key in today) {
-        document.getElementById(key).textContent= today[key];
+        document.getElementById(key).textContent = today[key];
     }
 }
-todaysdate()
+todaysdate(); // todaysdate 함수 호출하여 오늘 날짜 표시
 
+// 현재 날짜 객체 저장
 let currentDate = new Date();
 
+// 달력을 렌더링하는 함수
 function renderCalendar() {
     // 월의 첫날과 마지막 날 구하기
     const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
@@ -40,61 +45,61 @@ function renderCalendar() {
 
     // 날짜 추가
     let date = 1;
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 6; i++) { // 최대 6주 표시
         const row = document.createElement('tr');
         let rowisempty = true;
-        
-        for (let j = 0; j < 7; j++) {
+
+        for (let j = 0; j < 7; j++) { // 주당 7일 표시
             const cell = document.createElement('td');
-            if (i === 0 && j < firstDayIndex) {
+            if (i === 0 && j < firstDayIndex) { // 첫 주의 공백 채우기
                 cell.textContent = '';
-            } else if (date > lastDate) {
+            } else if (date > lastDate) { // 마지막 날짜 이후 공백 채우기
                 cell.textContent = '';
             } else {
-                cell.textContent = date;
+                cell.textContent = date; // 날짜 채우기
                 date++;
-                rowisempty = false;
+                rowisempty = false; // 행이 비어 있지 않음
             }
-            row.appendChild(cell);
+            row.appendChild(cell); // 셀을 행에 추가
         }
-        if (rowisempty) {
+        if (rowisempty) { // 행이 비어 있으면 반복 중지
             break;
-        }  
-        calendarBody.appendChild(row);
-        
-        
+        }
+        calendarBody.appendChild(row); // 행을 달력 본체에 추가
     }
+}
+renderCalendar(); // renderCalendar 함수 호출하여 달력 렌더링
 
-            
-} renderCalendar();
-
+// 이전 달 버튼 클릭 이벤트 리스너
 prevMonthButton.addEventListener('click', () => {
-    currentDate.setMonth(currentDate.getMonth() - 1);
-    renderCalendar();
+    currentDate.setMonth(currentDate.getMonth() - 1); // 현재 달을 이전 달로 설정
+    renderCalendar(); // 달력을 다시 구성
 });
 
+// 다음 달 버튼 클릭 이벤트 리스너
 nextMonthButton.addEventListener('click', () => {
-    currentDate.setMonth(currentDate.getMonth() + 1);
-    renderCalendar();
+    currentDate.setMonth(currentDate.getMonth() + 1); // 현재 달을 다음 달로 설정
+    renderCalendar(); // 달력을 다시 구성
 });
 
-
-
+// '추가' 버튼 클릭 이벤트 리스너
 const addButton = document.querySelector('#add-button');
 addButton.addEventListener('click', () => {
     const userinput = document.querySelector('#input');
-    const text = userinput.value.trim();
+    const text = userinput.value.trim(); // 입력값에서 공백 제거
     
     if(text !== '') {
-       addlist(text);
-       input.value = '';
-       input.focus();
+       addlist(text); // 입력값이 비어있지 않으면 리스트에 추가
+       input.value = ''; // 입력 필드 초기화
+       input.focus(); // 입력 필드에 포커스 설정
     } 
 });
+
+// 할 일 목록에 항목을 추가하는 함수
 function addlist(text) {
     const todolist = document.querySelector('#list');
-    const newlistitem = document.createElement('li');
-    newlistitem.classList.add('list-item');
-    newlistitem.innerHTML = text;
-    todolist.appendChild(newlistitem);
+    const newlistitem = document.createElement('li'); // 새로운 리스트 항목 생성
+    newlistitem.classList.add('list-item'); // 클래스 추가
+    newlistitem.innerHTML = text; // 텍스트 설정
+    todolist.appendChild(newlistitem); // 리스트에 항목 추가
 }

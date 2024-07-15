@@ -1,80 +1,61 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko"> <!-- 문서 유형과 언어를 한국어로 설정 -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CALENDAR📆</title>
-    <link rel="stylesheet" href="calendar.css">
+    <meta charset="UTF-8"> <!-- 문자 인코딩을 UTF-8로 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 페이지가 반응형이 되도록 설정 -->
+    <title>CALENDAR📆</title> <!-- 웹 페이지의 제목 -->
+    <link rel="stylesheet" href="calendar.css"> <!-- 외부 CSS 파일을 링크하여 스타일 적용 -->
 </head>
 <body>
-    <h1 class="korean", class= 'today'>오늘</h1>
+    <h1 class="font-st">오늘</h1> <!--달력 상단의 오늘 날짜부분 -->
     
+    <!-- 오늘의 날짜를 표시하는 섹션 -->
+    <div class='today'>
+        <div id="todayyear" class="gap"></div> <!-- 현재 연도를 표시-->
+        <div id="todaymonth" class="gap"></div> <!-- 현재 월을 표시-->
+        <div id="todaydate" class="gap"></div> <!-- 현재 일을 표시-->
+        <div id="todayofweek"></div> <!-- 현재 요일을 표시 -->
+        <div>요일</div> 
+    </div></br></br> <!-- 줄 바꿈 -->
     
-    <div class= 'today'>
-        <div id="todayyear", class="gap"></div>
-        <div id="todaymonth", class ="gap"></div>
-        <div id="todaydate", class="gap"></div>
-        <div id="todayofweek"></div>
-        <div>요일</div>
-        
-
-    </div></br></br>
-    
-    <div class="calendar-controls", id="calendar-controls">
-        <button id="prev-month", class="button1 btnPush clickmonth controls">이전</button>
-        <!--<span id="current-month"></span>-->
-        <div id="current-month", class = "controls"></div>
-        <button id="next-month", class="button1 btnPush clickmonth controls">다음</button>
+    <!-- 달력의 날짜 컨트롤을 위한 섹션 -->
+    <div class="calendar-controls" id="calendar-controls">
+        <button id="prev-month" class="button1 btnPush clickmonth">이전</button> <!-- 이전 달로 이동하는 버튼 -->
+        <div id="current-month"></div> <!-- 현재 월을 표시 -->
+        <button id="next-month" class="button1 btnPush clickmonth">다음</button> <!-- 다음 달로 이동하는 버튼 -->
     </div>
     <table>
         <thead>
             <tr>
                 <th>일</th>
-                <th>월</th>
-                <th>화</th>
-                <th>수</th>
-                <th>목</th>
-                <th>금</th>
-                <th>토</th>
+                <th>월</th> 
+                <th>화</th> 
+                <th>수</th> 
+                <th>목</th> 
+                <th>금</th> 
+                <th>토</th> 
             </tr>
         </thead>
         <tbody id="calendar-body">
-            <!-- 달력 날짜 -->
+            <!-- 달력 날짜가 들어가는 부분 -->
         </tbody>
     </table>
 
+    <!-- 할 일 목록 섹션 -->
     <div class="todobox">
         <div class="input-box">
-            <h3 class="korean">할 일을 추가하세요.</h3>
-            <input type="text" id="input" placeholder="예)보고서 작성" />
-            <button id="add-button", class="korean">추가</button>
+            <h3 class="font-st">오늘의 할 일</h3> <!--오늘의 할 일 제목 -->
+            <input type="text" id="input" placeholder="예)보고서 작성" /> <!-- 할 일을 입력하는 텍스트 필드 -->
+            <button id="add-button" class="font-st">추가</button> <!-- 할 일을 추가하는 버튼 -->
         </div>
         <div class="list-box">
-            <h2 class="korean">할 일 목록</h2>
+            <h2 class="font-st">할 일 목록</h2> <!-- 할 일 목록 제목 -->
             <ul id="list">
-                <li class="list-item">보고서 작성하기</li>
+                <li class="list-item">보고서 작성하기</li> <!-- 할 일 항목 -->
             </ul>
         </div>
     </div>
 
-<script src="calendar.js"></script>
-
-
-
-
-    <!--<a href="" title="Button push blue/green" class="button btnPush btnBlueGreen">Push</a>-->
-    <button id="btnBlueGreen", class="btnPush">이전</button>
-  </div>
-
-<div class="calendar-controls", id="calendar-controls">
-    <button id="prev-month", class="button1 btnPush clickmonth controls">이전</button>
-    <div id="current-month", class="controls"></div>
-    <button id="next-month", class="button1 btnPush clickmonth controls">다음</button>
-</div>
-
-
-
-
-  
+<script src="calendar.js"></script> <!-- 외부 JavaScript 파일을 링크 -->
 </body>
 </html>
