@@ -87,7 +87,7 @@ const addButton = document.querySelector('#add-button');
 addButton.addEventListener('click', () => {
     const userinput = document.querySelector('#input');
     const text = userinput.value.trim(); // 입력값에서 공백 제거
-    
+
     if(text !== '') {
        addlist(text); // 입력값이 비어있지 않으면 리스트에 추가
        input.value = ''; // 입력 필드 초기화
@@ -98,8 +98,11 @@ addButton.addEventListener('click', () => {
 // 할 일 목록에 항목을 추가하는 함수
 function addlist(text) {
     const todolist = document.querySelector('#list');
+    const checkBox = document.createElement('input');
+    checkBox.setAttribute('type','checkbox');
     const newlistitem = document.createElement('li'); // 새로운 리스트 항목 생성
     newlistitem.classList.add('list-item'); // 클래스 추가
     newlistitem.innerHTML = text; // 텍스트 설정
+    todolist.appendChild(checkBox);
     todolist.appendChild(newlistitem); // 리스트에 항목 추가
 }
