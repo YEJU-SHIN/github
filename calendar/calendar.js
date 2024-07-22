@@ -25,6 +25,20 @@ function todaysdate() {
 }
 todaysdate(); // todaysdate 함수 호출하여 오늘 날짜 표시
 
+
+//버튼 작업중//
+const prevBg = document.getElementById('prev-bg');
+const nextBg = document.getElementById('next-bg');
+
+
+
+
+
+
+
+
+
+
 // 현재 날짜 객체 저장
 let currentDate = new Date();
 
@@ -90,19 +104,51 @@ addButton.addEventListener('click', () => {
 
     if(text !== '') {
        addlist(text); // 입력값이 비어있지 않으면 리스트에 추가
-       input.value = ''; // 입력 필드 초기화
-       input.focus(); // 입력 필드에 포커스 설정
+       userinput.value = ''; // 입력 필드 초기화
+       userinput.focus(); // 입력 필드에 포커스 설정
     } 
 });
 
 // 할 일 목록에 항목을 추가하는 함수
 function addlist(text) {
     const todolist = document.querySelector('#list');
-    const checkBox = document.createElement('input');
-    checkBox.setAttribute('type','checkbox');
     const newlistitem = document.createElement('li'); // 새로운 리스트 항목 생성
     newlistitem.classList.add('list-item'); // 클래스 추가
-    newlistitem.innerHTML = text; // 텍스트 설정
-    todolist.appendChild(checkBox);
+    
+    const checkBox = document.createElement('input');
+    checkBox.setAttribute('type','checkbox');
+    checkBox.classList.add('ckbox'); // 추가
+
+    
+   
+
+
+
+    
+
+    const span = document.createElement('span');
+    span.appendChild(document.createTextNode(text));
+
+
+    // 체크박스의 change 이벤트 리스너 추가
+    checkBox.addEventListener('change', () => {
+        if (checkBox.checked) {
+            span.style.textDecorationLine = 'line-through'
+        } else {
+            span.style.textDecorationLine = 'none'  
+        }
+    });
+
+    const deleteButton = document.createElement('button'); // 삭제 버튼 생성 
+    deleteButton.textContent = '삭제'; // 삭제 버튼 텍스트 설정 
+    deleteButton.classList.add('delete-button'); // 삭제 버튼에 클래스 추가 
+    deleteButton.addEventListener('click', () => { // 삭제 버튼 클릭 이벤트 리스너 추가
+        todolist.removeChild(newlistitem); // 리스트 항목 삭제 
+    });
+
+    newlistitem.appendChild(checkBox); // 체크박스를 리스트 항목에 추가
+    newlistitem.appendChild(span);
+    newlistitem.appendChild(deleteButton); // 삭제 버튼을 리스트 항목에 추가 
+    
     todolist.appendChild(newlistitem); // 리스트에 항목 추가
 }

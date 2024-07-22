@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="calendar.css"> <!-- 외부 CSS 파일을 링크하여 스타일 적용 -->
 </head>
 <body class="my_div my_bg">
-    <h1 class="font-st">오늘</h1> <!--달력 상단의 오늘 날짜부분 -->
     
+    <h1 class="font-st">오늘</h1> <!--달력 상단의 오늘 날짜부분 -->
     <!-- 오늘의 날짜를 표시하는 섹션 -->
     <div class='today'>
         <div id="todayyear" class="gap"></div> <!-- 현재 연도를 표시-->
@@ -17,6 +17,17 @@
         <div id="todayofweek"></div> <!-- 현재 요일을 표시 -->
         <div>요일</div> 
     </div></br></br> <!-- 줄 바꿈 -->
+
+
+    <!--버튼 작업중-->
+    <div class="backgroud">
+        <button type="button" id="prev-bg" >◁</button>
+        <button type="button" id="next-bg">▷</button> 
+    </div>
+
+
+
+
     
     <!-- 달력의 날짜 컨트롤을 위한 섹션 -->
     <div class="calendar-controls" id="calendar-controls">
@@ -51,7 +62,9 @@
         <div class="list-box">
             <h2 class="font-st">할 일 목록</h2> <!-- 할 일 목록 제목 -->
             <ul id="list"> 
-                <li class="list-item">보고서 작성하기</li><!-- 할 일 항목 --> 
+                <!--<li class="list-item">
+                    <input type="checkbox" class="ckbox">   
+                </li>--><!-- 할 일 항목 --> 
             </ul>
         </div>
     </div>
