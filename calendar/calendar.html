@@ -6,7 +6,7 @@
     <title>CALENDAR📆</title> <!-- 웹 페이지의 제목 -->
     <link rel="stylesheet" href="calendar.css"> <!-- 외부 CSS 파일을 링크하여 스타일 적용 -->
 </head>
-<body class="my_div my_bg">
+<body id=my_bg>
     
     <h1 class="font-st">오늘</h1> <!--달력 상단의 오늘 날짜부분 -->
     <!-- 오늘의 날짜를 표시하는 섹션 -->
@@ -16,13 +16,13 @@
         <div id="todaydate" class="gap"></div> <!-- 현재 일을 표시-->
         <div id="todayofweek"></div> <!-- 현재 요일을 표시 -->
         <div>요일</div> 
-    </div></br></br> <!-- 줄 바꿈 -->
+    </div> <!-- 줄 바꿈 -->
 
 
-    <!--버튼 작업중-->
-    <div class="backgroud">
-        <button type="button" id="prev-bg" >◁</button>
-        <button type="button" id="next-bg">▷</button> 
+    
+    <div class="background">
+        <button type="button" id="prev-bg" ><</button>
+        <button type="button" id="next-bg">></button> 
     </div>
 
 
@@ -69,6 +69,6 @@
         </div>
     </div>
 
-<script src="calendar.js"></script> <!-- 외부 JavaScript 파일을 링크 -->
+<script src="calendar.js"></script> 
 </body>
 </html>

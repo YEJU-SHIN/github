@@ -26,9 +26,45 @@ function todaysdate() {
 todaysdate(); // todaysdate 함수 호출하여 오늘 날짜 표시
 
 
-//버튼 작업중//
-const prevBg = document.getElementById('prev-bg');
-const nextBg = document.getElementById('next-bg');
+//배경 이미지 전환버튼//
+document.addEventListener('DOMContentLoaded', () => {
+    const backImage = document.getElementById('my_bg');
+    const prevBgButton = document.getElementById('prev-bg');
+    const nextBgButton = document.getElementById('next-bg');
+
+    const images = [
+        'ilia-bronskiy-yA76eJrAFVg-unsplash.jpg', 
+        'car-8647797_1920.jpg', 
+        'houses-8618837_1920.jpg', 
+        'full-moon-460314_1920.jpg'
+    ];
+    
+    let currentimg = 0;
+    
+    function currentBkImage () {
+        const imgurl = `./background/${images[currentimg]}`
+        backImage.style.backgroundImage = `url(${imgurl})`;    
+    }
+
+    function jumpToNextImg () {
+        currentimg = (currentimg + 1) % images.length;
+        currentBkImage ();
+    }
+
+    function jumpToBackImg () {
+        currentimg = (currentimg - 1 + images.length) % images.length;
+        currentBkImage ();
+    }
+
+    currentBkImage();
+
+    prevBgButton.addEventListener('click', jumpToNextImg);
+    nextBgButton.addEventListener('click', jumpToBackImg);
+
+
+})
+
+
 
 
 
@@ -106,7 +142,10 @@ addButton.addEventListener('click', () => {
        addlist(text); // 입력값이 비어있지 않으면 리스트에 추가
        userinput.value = ''; // 입력 필드 초기화
        userinput.focus(); // 입력 필드에 포커스 설정
-    } 
+    }
+    
+
+   
 });
 
 // 할 일 목록에 항목을 추가하는 함수
@@ -118,13 +157,6 @@ function addlist(text) {
     const checkBox = document.createElement('input');
     checkBox.setAttribute('type','checkbox');
     checkBox.classList.add('ckbox'); // 추가
-
-    
-   
-
-
-
-    
 
     const span = document.createElement('span');
     span.appendChild(document.createTextNode(text));
@@ -151,4 +183,8 @@ function addlist(text) {
     newlistitem.appendChild(deleteButton); // 삭제 버튼을 리스트 항목에 추가 
     
     todolist.appendChild(newlistitem); // 리스트에 항목 추가
+   
+    
+    
 }
+

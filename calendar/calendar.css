@@ -1,10 +1,20 @@
-.my_div {
-   
-}
 
-.my_bg {
-   background-image: url("ilia-bronskiy-yA76eJrAFVg-unsplash.jpg"), url(car-8647797_1920.jpg), url(houses-8618837_1920.jpg), url(full-moon-460314_1920.jpg);
-   background-size: cover;
+.background {
+   display: inline;
+   float: right;
+   margin-bottom: 5px;
+
+}
+.background button {
+   padding: 4px 9px;
+   color: #035f3a;
+   border: none;
+   background-color: #feffe9;
+   background-color: rgb(255,255,255,0.8);
+}
+#my_bg {
+  
+   background-size: cover;  
 }
 /* 날짜 버튼 */
 .today div{ 
@@ -16,6 +26,7 @@
  h1 {
     padding-left: 90px; /* 왼쪽 여백을 90px로 설정 */
     color: rgb(40, 149, 85); /* 글자 색상을 설정 */
+    margin-bottom: 0px;
  }
  h1, .today {
     display: inline-block; /* 인라인 블록 요소로 설정 */
@@ -36,6 +47,7 @@
     display: flex; /* 플렉스박스 레이아웃 설정 */
     justify-content: center; /* 가운데 정렬 */
     padding-bottom: 10px; /* 아래쪽 여백을 10px로 설정 */
+    clear: right;
  }
  
  .button1 {
@@ -43,7 +55,7 @@
     position: relative; /* 상대 위치 설정 */
     float: right; /* 오른쪽 정렬 */
     padding: 5px 10px; /* 상하, 좌우 여백 설정 */
-    margin: 10px 0px 10px 0; /* 위, 오른쪽, 아래, 왼쪽 여백 설정 */
+    margin: 10px 0px 10px 0px; /* 위, 오른쪽, 아래, 왼쪽 여백 설정 */
     font-weight: 500; /* 폰트 굵기 설정 */
     text-align: center; /* 가운데 정렬 */
     line-height: 33px; /* 줄 높이 설정 */
@@ -105,8 +117,11 @@
     padding-top: 15px; /* 위쪽 여백 설정 */
  }
  h3 {
+    font-size: 23px;
     padding-right: 30px; /* 오른쪽 여백 설정 */
     text-align: left; /* 왼쪽 정렬 */
+    text-shadow: -1px 0px #ffffff, 0px 1px hsl(60, 100%, 100%), 1px 0px rgb(255, 255, 255), 0px -1px #ffffff;
+
     
  }
  #input:focus {
@@ -177,11 +192,6 @@
 
 
 
-/* : 할 일 완료 시 텍스트에 중간 줄 추가 */
-/*.completed {
-   text-decoration: line-through; /* 텍스트 중간 줄 설정 */ 
-   /*color: gray; /* 텍스트 색상을 회색으로 변경 */ 
-/*}*/ 
 
 /*  삭제 버튼 스타일 */
 .delete-button {
