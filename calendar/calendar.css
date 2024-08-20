@@ -1,21 +1,21 @@
-
+/*달력 배경 이미지 및 이미지 전환버튼 설정*/
 .background {
-   display: inline;
-   float: right;
-   margin-bottom: 5px;
+   display: inline;   /* 인라인 요소로 설정 */
+   float: right;     /* 오른쪽 정렬 */
+   margin-bottom: 5px;   /*아래쪽 여백 설정*/
 
 }
 .background button {
-   padding: 4px 9px;
-   color: #035f3a;
-   border: none;
-   background-color: #feffe9;
-   background-color: rgb(255,255,255,0.8);
+   padding: 4px 9px;   /*배경버튼 여백 설정(위아래 4픽셀, 좌우 9픽셀*/
+   color: #035f3a;  /*버튼 텍스트 색상 설정*/
+   border: none;      /*버튼 테두리 제거*/
+   background-color: #feffe9;  /*버튼 배경색 설정*/
+   background-color: rgb(255,255,255,0.8);  /*버튼 배경색 투명도 설정*/
 }
 #my_bg {
-  
-   background-size: cover;  
+   background-size: cover;  /*배경 이미지, 화면 크기에 맞게 전체 덮도록 설정*/
 }
+
 /* 날짜 버튼 */
 .today div{ 
     float: left; /* div 요소들을 왼쪽으로 정렬 */
@@ -103,7 +103,6 @@
  }
  /* 할 일 입력, 추가 버튼 */
  .todobox {
-    /*background-color: #fff8df; /* 배경 색상 설정 */
     display: flex; /* 플렉스박스 레이아웃 설정 */
     flex-direction: column; /* 열 방향 정렬 */
     padding: 32px 0; /* 상하 여백 설정 */
@@ -182,15 +181,10 @@
    color: rgb(40, 149, 85); /* 글자 색상 설정 */
 }
 
-
-/*체크박스 스타일 바꿔야함*/
-
 .ckbox  {
-   width: 30px;
-   margin-right: 20px;
+   width: 30px;    /*체크박스 너비 30픽셀로 설정*/
+   margin-right: 20px;   /*오른쪽 여백 20픽셀로 설정*/
 }
-
-
 
 
 /*  삭제 버튼 스타일 */
@@ -208,9 +202,6 @@
    background-color: rgb(124, 188, 220); /* 마우스를 올렸을 때 배경 색상 설정 */ 
 }
 
-
-
- 
  /* 폰트 설정 */
  @font-face {
     font-family: 'YClover-Bold'; /* YClover-Bold 폰트 설정 */
